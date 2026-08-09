@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main{
+    public static void main (String []args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("digite um numero inteiro");
+        int numero = sc.nextInt();
+        
+        if (numero%2 == 0){
+            System.out.print("O numero e pa");
+        }else{
+            System.out.print("O numero e impar ");
+        }
+        
+        sc.close();
+        
+    
+    }
+}
