@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static void main (String []args){
+        Scanner sc = new Scanner (System.in);
+        System.out.print("digite uma nota");
+        double nota = sc.nextDouble();
+        if (nota >=7){
+            System.out.print("voce foi aprovado");
+            
+        }else{
+            System.out.print("voce foi reprovado");
+        }
+        
+        sc.close();
+        
+    }
+}
