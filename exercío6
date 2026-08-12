@@ -1,0 +1,43 @@
+import java.util.*;
+
+class Aluno{
+    String nome;
+    String status = "ativo";
+    int horasEstudo = 0;
+
+  void estudar(){
+
+horasEstudo += 2;
+System.out.print ( nome + " voce estudou 2 horas total acumulado de estudo foi: " +   horasEstudo);
+ 
+  }
+void trancarMatricula(){
+
+String sub = "trancado";
+
+String aux = status;
+status = sub;
+sub = aux;
+
+System.out.print("Atenção o status da matrícula foi trancada");
+}
+}
+
+public class Main {
+    public static void main(String[] args) {
+      Aluno alunoJoao = new Aluno();
+      alunoJoao.nome = "Joao";
+      Aluno alunoMaria = new Aluno();
+      alunoMaria.nome = "Maria";
+    
+    for (int i = 0; i<3; i++){
+
+    alunoJoao.estudar();
+    }
+
+    alunoJoao.trancarMatricula();
+    
+    alunoMaria.estudar();
+    }
+}
+
