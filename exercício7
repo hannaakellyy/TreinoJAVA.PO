@@ -1,0 +1,53 @@
+import java.util.*;
+
+class Cartao {
+
+    int numeroo;
+    double limite;
+    double saldo;
+    double valor;
+
+    // 1. O registrar APENAS lê o valor do teclado
+    void registrar() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite o valor da compra para o cartão " + numeroo + ": R$ ");
+        valor = sc.nextDouble();
+    }
+
+    // 2. O verificar TESTA a lógica e DESCONTA o saldo se for aprovado
+    void verificar() {
+        if (saldo >= valor || limite >= valor) {
+            saldo = saldo - valor; // Desconta AQUI, só depois que aprovou!
+            System.out.println("Há saldo/limite suficiente no cartão " + numeroo + "! Compra efetuada. Novo saldo: R$ " + saldo);
+        } else {
+            System.out.println("Não há saldo/limite suficiente no cartão " + numeroo + " para o valor de R$ " + valor);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Olá cliente, Seja bem vindo!\n");
+
+        Cartao cartao1 = new Cartao();
+        cartao1.numeroo = 111;
+        cartao1.limite = 1000;
+        cartao1.saldo = 0;
+
+        Cartao cartao2 = new Cartao();
+        cartao2.numeroo = 222;
+        cartao2.limite = 1000;
+        cartao2.saldo = 1000;
+
+        // Cartão 1
+        cartao1.registrar(); // Lê e guarda no 'valor'
+        cartao1.verificar(); // Testa o 'valor' com o '||' e aprova/recusa
+
+        System.out.println("-----------------------------------");
+
+        // Cartão 2
+        cartao2.registrar(); // Lê e guarda no 'valor'
+        cartao2.verificar(); // Testa o 'valor' com o '||' e aprova/recusa
+    }
+}
