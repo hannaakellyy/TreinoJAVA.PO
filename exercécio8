@@ -1,0 +1,36 @@
+
+import java.util.*;
+
+class Aluno{
+    private String nome; 
+    private int idade;
+
+    public void setnome(String nome){
+        this.nome = nome;
+    }
+    public String getnome(){
+    return this.nome;
+}
+
+public void setidade(int idade){
+   this.idade = idade; 
+}
+public int getidade(){
+  return this.idade;  
+}
+
+void MostrarDados(){
+ System.out.print("o nome do aluno é" + nome + "a idade é" + idade);   
+}
+}
+
+public class Main{
+   public static void main (String[]args){
+        
+        Aluno aluno1 = new Aluno();
+        aluno1.setnome("Hanna");
+        aluno1.setidade(18);
+
+        aluno1.MostrarDados();
+    }
+}
