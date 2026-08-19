@@ -1,0 +1,114 @@
+import java.util.*;
+
+class Livro {
+    private String titulo;
+    private String autor; 
+    private int isbn;
+    private int anoDePublicacao;
+    private int quantidadeDisponivel; // Sem acento
+
+    // Construtor
+    Livro(String titulo, String autor, int isbn, int anoDePublicacao, int quantidadeDisponivel) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = isbn;
+        this.anoDePublicacao = anoDePublicacao;
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    public Livro() {}
+
+    // Getters e Setters corrigidos e padronizados
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getAutor() {
+        return this.autor;
+    }
+
+    public void setIsbn(int isbn) { // Parâmetro adicionado
+        this.isbn = isbn;
+    }
+
+    public int getIsbn() { // Adicionado getter que faltava
+        return this.isbn;
+    }
+
+    public void setAnoDePublicacao(int anoDePublicacao) { // Nome do parâmetro corrigido
+        this.anoDePublicacao = anoDePublicacao;
+    }
+
+    public int getAnoDePublicacao() {
+        return this.anoDePublicacao;
+    }
+
+    public void setQuantidadeDisponivel(int quantidadeDisponivel) { // Adicionado setter
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    public int getQuantidadeDisponivel() { // Adicionado getter
+        return this.quantidadeDisponivel;
+    }
+
+
+void emprestar(){
+  Scanner scanner = new Scanner(System.in);
+
+  if(quantidadeDisponivel > 0){
+      System.out.print("quantos livros voce quer emprestado?");
+      int emprestado = scanner.nextInt();
+
+  quantidadeDisponivel = quantidadeDisponivel - emprestado;
+
+System.out.print("quantidade disponivel é:" + quantidadeDisponivel);
+
+  }
+
+}
+void devolver(){
+  Scanner scanner = new Scanner(System.in);
+
+  System.out.print("quantos livros voce que devolver");
+
+int devolver = scanner.nextInt();
+
+quantidadeDisponivel = quantidadeDisponivel + devolver;
+
+System.out.print("quantidade disponivel é:" + quantidadeDisponivel);
+
+
+}
+}
+
+public class Main {
+    public static void main(String[] args) {
+  
+
+        Livro pessoa1 = new Livro();
+
+        pessoa1.setTitulo("Dom Casmurro");
+
+        pessoa1.setAutor("Machado de Assis");
+
+        pessoa1.setIsbn(1234);
+
+        pessoa1.setAnoDePublicacao(1800);
+
+        pessoa1.setQuantidadeDisponivel(100);
+
+        pessoa1.emprestar();
+
+        pessoa1.devolver();
+
+        
+    }
+}
