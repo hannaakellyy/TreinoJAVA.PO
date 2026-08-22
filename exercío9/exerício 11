@@ -1,0 +1,66 @@
+import java.util.*;
+
+class Motor{
+  private String marca;
+  private int codigo;
+  private int potencia;
+
+  Motor(String marca, int codigo, int potencia){
+    this.marca = marca; 
+    this.codigo = codigo;
+    this.potencia = potencia;
+  }
+
+  public void setmarca(String marca){
+    this.marca = marca;
+  }
+  public String getmarca(){
+    return this.marca;
+  }
+public void setcodigo(int codigo){
+  this.codigo = codigo;
+}
+public int getcodigo (){
+return this.codigo;
+}
+
+public void setpotencia(int potencia){
+  this.potencia = potencia;
+}
+public int getpotencia(){
+  return this.potencia;
+}
+}
+
+class Carro{
+
+private String cor;
+private int placa;
+Motor motor;
+  
+Carro (String cor, int placa, String marca, int codigo, int potencia){
+  this.cor = cor;
+  this.placa = placa;
+  
+  this.motor = new Motor(marca ,codigo, potencia);
+}
+public void setcor(String cor){
+  this.cor = cor;
+}
+public String getcor(){
+  return this.cor;
+}
+public void setplaca(int placa){
+  this.placa = placa;
+}
+public int getplaca(){
+  return this.placa;
+}
+}
+
+public class Main{
+  public static void main(String [] args){
+    Carro carro1 = new Carro("Azul", 2345, "Fiat",1234, 20);
+    System.out.print("testando");
+  }
+}
