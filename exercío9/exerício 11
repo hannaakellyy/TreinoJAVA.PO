@@ -56,11 +56,22 @@ public void setplaca(int placa){
 public int getplaca(){
   return this.placa;
 }
+
+void subir(){
+  if (this.motor.getpotencia() <= 100){
+    System.out.print(" carro não consegue subir");
+
+  }else{
+    System.out.print("O carro consegue subir");
+  }
+}
 }
 
 public class Main{
   public static void main(String [] args){
-    Carro carro1 = new Carro("Azul", 2345, "Fiat",1234, 20);
-    System.out.print("testando");
+    Carro carro1 = new Carro("Azul", 2345, "Fiat",1234, 200);
+    
+
+    carro1.subir();
   }
 }
