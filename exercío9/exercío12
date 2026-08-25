@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Carro{
+  String modelo;
+  int ano;
+     
+     Carro(String modelo, int ano){
+      this.modelo = modelo;
+      this.ano = ano;
+     }
+}
+
+     class Garagem{
+      int capacidade;
+      int tamanho;
+      Carro[] carro;
+
+      Garagem(int capacidade){
+        this.capacidade = capacidade;
+        this.tamanho = 0;
+        this.carro = new Carro[capacidade];
+      }
+  
+
+void adicionarCarro(String modelo, int ano){
+  if(tamanho == capacidade){
+    System.err.print("Sala cheia");
+    return;
+  }
+  carro[this.tamanho] = new Carro(modelo, ano);
+  this.tamanho ++;
+}
+     }
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Garagem poo = new Garagem(5);
+
+      poo.adicionarCarro("Fiat", 2008);
+
+System.out.print(poo.carro[0].ano);
+    }
+}
