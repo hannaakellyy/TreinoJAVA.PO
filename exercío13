@@ -1,0 +1,41 @@
+import java.util.*;
+
+
+class Bateria{
+  int carga;
+  int temperatura;
+
+Bateria(int carga, int temperatura){
+  this.carga = carga;
+  this.temperatura = temperatura;
+}
+}
+
+class Smartphone{
+  String marca;
+  Bateria bateria;
+
+  Smartphone (int carga, int temperatura){
+    this.marca = marca;
+    this.bateria = new Bateria( carga, temperatura);
+  }
+
+  public void abrir(){
+    if(this.bateria.carga < 20 || this.bateria.temperatura > 30){
+      System.out.print("não será possivel abrir o aplicativo");
+
+    }else{
+      System.out.print("Será possivel abrir a bateria");
+    }
+  
+
+  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+      Smartphone celular1 = new Smartphone(40, 50);
+      celular1.abrir();
+    }
+}
