@@ -1,0 +1,45 @@
+class Aluno{
+
+String nomeAluno;
+boolean mensalidade;
+
+Aluno(String nomeAluno, boolean mensalidade){
+  this.nomeAluno = nomeAluno;
+  this.mensalidade = mensalidade;
+}
+}
+class Professor{
+
+  String nomeProfessor;
+  Aluno aluno;
+
+  Professor(String nomeProfessor ){
+this.nomeProfessor = nomeProfessor;
+  }
+
+  public void verificar(){
+    if(this.aluno.mensalidade == true){
+      System.out.print("acesso aceito");
+
+    }else{
+      System.out.print("acesso negado");
+    }
+  
+  }
+}
+
+public class Main{
+  public static void main (String []args){
+    
+
+    Aluno aluno1 = new Aluno("Ana", true);
+
+    Professor professor1 = new Professor ("Carlos");
+
+    professor1.aluno = aluno1;
+
+    professor1.verificar();
+
+
+  }
+}
