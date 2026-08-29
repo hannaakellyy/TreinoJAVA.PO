@@ -1,0 +1,39 @@
+class Pessoa{
+  private String nome;
+  private int idade;
+
+  public void setnome(String nome){
+    this.nome = nome;
+  }
+
+  public String getnome(){
+    return this.nome;
+  }
+   
+   public void setidade(int idade){
+    this.idade = idade;
+   }
+
+   public int getidade(){
+    return this.idade;
+   }
+
+   Pessoa(String nome, int idade){
+    this.nome = nome;
+    this.idade = idade;
+   }
+
+   public void apresentar(){
+    System.out.print("Ola meu nome e" + nome);
+   }
+}
+
+
+public class Main{
+  public static void main (String []args){
+    
+Pessoa pessoa1 = new Pessoa( "Hanna", 18);
+
+pessoa1.apresentar();
+  }
+}
