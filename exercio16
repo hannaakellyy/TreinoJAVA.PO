@@ -1,0 +1,64 @@
+import java.util.*;
+
+class Aluno{
+  String nomeA;
+  
+  Aluno(String nomeA){
+    this.nomeA = nomeA;
+  }
+}
+
+  class Escola{
+    int capacidade;
+    int  tamanho;
+    Aluno[] aluno;
+    String nomeE;
+
+  
+  Escola(int capacidade, String nomeE){
+    this.capacidade = capacidade;
+    this.nomeE = nomeE;
+    this.tamanho = 0;
+    this.aluno = new Aluno[capacidade];
+  }
+
+  void criarAluno(String nomeA){
+    if(tamanho == capacidade){
+      System.err.print("está cheio");
+      return;
+    }
+    this.aluno[tamanho++] = new Aluno(nomeA);
+
+  }
+
+  void removerAluno(){
+    if(tamanho == 0){
+      System.err.print("está vazio");
+      return;
+    }
+    tamanho--;
+  }
+
+  void imprimirAluno(){
+    for(int i = 0; i< tamanho; i++){
+      System.out.print(aluno[i].nomeA);
+    }
+  }
+  }
+
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Escola escola1 = new Escola(20, "Espaco");
+
+      escola1.criarAluno("Hanna");
+
+       escola1.criarAluno("Maria");
+
+       escola1.removerAluno();
+
+       escola1.imprimirAluno();
+    }
+}
