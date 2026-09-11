@@ -1,0 +1,39 @@
+import java.util.*;
+
+class Bateria{
+  int carga;
+  int temperatura;
+
+  Bateria(int carga, int temperatura){
+    this.carga = carga;
+    this.temperatura = temperatura;
+  }
+
+}
+  class Smart{
+    String marca;
+    int valor;
+    Bateria bateria;
+
+    Smart(String marca, int valor, int  carga, int temperatura){
+      this.marca = marca;
+      this.valor = valor;
+      this.bateria = new Bateria(carga, temperatura);
+    }
+
+    public void imprimir(){
+System.out.print("nome da marca" + marca +"valor da temperatura" + this.bateria.temperatura );
+    }
+  }
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+      Smart Smart1 = new Smart("aleatoria", 20, 80, 50);
+
+      Smart1.imprimir();
+
+    }
+}=

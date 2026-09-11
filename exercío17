@@ -1,0 +1,64 @@
+import java.util.*;
+
+class Livro{
+  private String titulo;
+  private int anoPublicacao;
+  private Autor autorOficial;
+
+  public void settitulo(String titulo){
+    this.titulo = titulo;
+  }
+  public String gettitulo(){
+    return this.titulo;
+  }
+  public void setanoPublicacao(int anoPublicacao){
+    this.anoPublicacao = anoPublicacao;
+  }
+  public int getanoPublicacao(){
+    return this.anoPublicacao;
+  }
+  public void setautorOficial(Autor autorOficial){
+    this.autorOficial = autorOficial;
+  }
+  public Autor getautorOficial(){
+    return this.autorOficial;
+  }
+
+  Livro(String novoTitulo, int novoAnopub, Autor novoAutor){
+    this.titulo = novoTitulo;
+    this.anoPublicacao = novoAnopub;
+    this.autorOficial = novoAutor;
+  }
+
+}
+
+class Autor{
+ public String nacionalidade;
+  public String nome;
+
+  public void setnacionalidade(String nacionalidade){
+    this.nacionalidade = nacionalidade;
+  }
+
+  public String getnacionalidade(){
+    return this.nacionalidade;
+  }
+
+  Autor(String novoNome, String nac){
+    this.nacionalidade = nac;
+    this.nome = novoNome;
+  }
+}
+
+public class Main{
+  public static void main(String[] args){
+    System.out.print("testando");
+
+    Autor autor1 = new Autor("Maria", "Brasileira");
+    Livro livro1 = new Livro("A Cabana", 2000, autor1);
+
+    System.out.print(livro1.getautorOficial().getnacionalidade());
+
+    
+  }
+}

@@ -1,0 +1,35 @@
+import java.util.*;
+
+
+class Livro{
+  String titulo;
+  int anoPublicacao;
+  Autor autorOficial;
+
+  Livro(String novoTitulo, int novoAnopub, Autor novoAutor){
+    this.titulo = novoTitulo;
+    this.anoPublicacao = novoAnopub;
+    this.autorOficial = novoAutor;
+  }
+}
+
+class Autor{
+  String nacionalidade;
+  String nome;
+
+  Autor(String novoNome, String nac){
+    this.nacionalidade = nac;
+    this.nome = novoNome;
+  }
+}
+
+public class Main{
+  public static void main(String[] args){
+    System.out.print("testando");
+
+    Autor autor1 = new Autor("Maria", "Brasileira");
+    Livro livro1 = new Livro("A Cabana", 2000, autor1);
+
+    System.out.print(livro1.autorOficial.nacionalidade);
+  }
+}
