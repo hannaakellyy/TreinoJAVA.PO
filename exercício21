@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+class Processador{
+  String modelo;
+  double clok;
+
+  Processador(String modelo, double clok){
+  this.modelo = modelo;
+  this.clok = clok;
+}
+}
+
+class Computador{
+  String marca;
+  Processador processador;
+
+  Computador(String marca, String modelo, double clok){
+    this.marca = marca;
+    this.processador = new Processador(modelo, clok);
+  }
+
+  void imprimir(){
+    System.out.print(this.marca +"" + this.processador.modelo +""+ this.processador.clok);
+  }
+
+}
+
+public class Main{
+public static void main (String args[]){
+  System.out.print("testando");
+
+  Computador computador1 = new Computador("aleatoria", "novo", 3.5);
+  computador1.imprimir();
+}
+}

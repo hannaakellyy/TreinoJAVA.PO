@@ -1,0 +1,72 @@
+import java.util.*;
+
+class Jogador{
+  String nome;
+  int idade;
+
+Jogador(String nome, int idade){
+  this.nome = nome;
+  this.idade = idade;
+}
+}
+
+class Time{
+  String nomeTime;
+  int capacidade;
+  int tamanho;
+  Jogador[] jogador;
+
+Time(String nomeTime, int capacidade){
+  this.nomeTime = nomeTime;
+  this.capacidade = capacidade;
+  this.tamanho = 0;
+  this.jogador = new Jogador[capacidade];
+}
+
+public void adicionarJogador(String nome, int idade){
+  if(tamanho == capacidade){
+    System.err.print("Cheio");
+    return;
+  }
+
+  jogador[tamanho++] = new Jogador(nome, idade);
+
+}
+
+public void imprimirJogador(){
+  if(tamanho == 0){
+    System.out.print("vazio");
+    return;
+  }
+  for(int i = 0; i<this.tamanho; i++){
+    System.out.print(jogador[i].nome);
+  }
+}
+
+public void remover(){
+  if(this.tamanho == 0){
+    System.err.print("banco vazio");
+    return;
+  }
+  this.tamanho--;
+}
+}
+
+
+public class Main{
+  public static void main (String [] args){
+  
+    Time time1 = new Time("aleatorio", 20);
+
+    time1.adicionarJogador("Adriano", 30);
+
+    time1.adicionarJogador("Maria", 20);
+
+    time1.remover();
+
+    time1.imprimirJogador();
+
+    
+
+  }
+}
