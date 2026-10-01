@@ -1,0 +1,56 @@
+import java.util.*;
+
+
+abstract class Pagamento{
+
+  private static int valor = 5;
+
+  Pagamento(int valor){
+    this.valor = valor;
+  }
+
+  void setvalor(int valor){
+    this.valor = valor;
+  }
+
+  int getvalor(){
+    return this.valor;
+  }
+
+   void processarPagamento(){
+  System.out.println("processando pagamento " + valor);
+  }
+}
+
+class CartaoCredito extends Pagamento{
+
+  CartaoCredito(){
+    super(5);
+  }
+
+}
+
+final class Pix extends Pagamento{
+
+  Pix(){
+      super(5);
+  }
+    
+   void processarPagamento(){
+
+    System.out.println("processando o seu pix" + getvalor());
+  }
+
+}
+
+
+public class Main{
+  public static void main(String[] args){
+
+    CartaoCredito cartao1 = new CartaoCredito();
+
+    cartao1.processarPagamento();
+
+
+  }
+}
