@@ -1,0 +1,76 @@
+import java.util.*;
+
+class BitsParidade {
+
+    public static String receberDados() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma sequencia de dados binarios: ");
+        String sequencia = scanner.nextLine();
+
+        for (int i = 0; i < sequencia.length(); i++) {
+            if (sequencia.charAt(i) != '0' && sequencia.charAt(i) != '1') {
+                System.err.print("Não é um codigo binario");
+                return sequencia;
+            }
+        }
+
+        scanner.close();
+        return sequencia;
+    }   
+
+    public static void calcularParidade(String dados) {
+        int n = dados.length();
+        int k = 0;
+
+        while (Math.pow(2, k) < n + k + 1) {
+            k++;
+        }
+        
+        int tamanho = k + n;
+
+        // 1. Criar o array com espaço para dados e paridades
+        char[] palavra = new char[tamanho];
+        int indiceDados = 0;
+
+        // Distribuir os dados e colocar '0' temporariamente nas potências de 2
+        for (int i = 0; i < tamanho; i++) {
+            int posicaoReal = i + 1;
+            
+            if ((posicaoReal & (posicaoReal - 1)) == 0) {
+                palavra[i] = '0'; 
+            } else {
+                palavra[i] = dados.charAt(indiceDados);
+                indiceDados++;
+            }
+        }
+
+        // 2. O ciclo exterior para calcular cada bit de paridade
+        for (int i = 0; i < k; i++) {
+            int salto = (int) Math.pow(2, i); 
+            int soma = 0;
+
+            for (int j = salto - 1; j < tamanho; j += 2 * salto) {
+                for (int p = 0; p < salto && (j + p) < tamanho; p++) {
+                    int indiceReal = j + p;
+                    
+                    if (indiceReal != salto - 1) {
+                        soma += palavra[indiceReal] - '0';
+                    }
+                }
+            }
+            
+            int bitParidade = soma % 2;
+            palavra[salto - 1] = (char) (bitParidade + '0');
+        }
+
+      
+        System.out.println("Palavra codificada de Hamming: " + new String(palavra));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        String dados = BitsParidade.receberDados();
+        BitsParidade.calcularParidade(dados);
+    }
+}

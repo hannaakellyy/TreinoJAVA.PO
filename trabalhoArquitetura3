@@ -1,0 +1,54 @@
+import java.util.*;
+
+class BitsParidade{
+
+  public static String receberDados(){
+
+    Scanner scanner = new Scanner(System.in);
+
+     System.out.println("digite uma sequencia de dados binarios");
+
+     String sequencia = scanner.nextLine();
+
+     for(int i = 0; i < sequencia.length(); i++){
+if (sequencia.charAt(i) != '0' && sequencia.charAt(i) != '1'){
+  System.err.print("não e um codigo binario");
+
+  return sequencia;
+}
+     }
+
+     System.out.println("voce digitou:" + sequencia);
+
+     scanner.close();
+
+     return sequencia;
+
+  }  
+
+  public static void calcularParidade(String sequencia){
+
+  
+int n = sequencia.length();
+
+int k;
+
+for( k = 0; Math.pow(2,k) < n + k + 1; k++){
+}
+int tamanho = k+n;
+    System.out.println("o tamanho da sua mensagem é igual a tamanho" + tamanho);
+    System.out.println("os bits de paridade são:" + k );
+    }
+
+}
+  
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      String dados = BitsParidade.receberDados();
+
+      BitsParidade.calcularParidade(dados);
+    }
+}

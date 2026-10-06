@@ -1,0 +1,67 @@
+import java.util.*;
+
+abstract class Animal{
+  String nome;
+  String nomeDoTutor;
+  int idade;
+
+
+  void fichaAnimal(){
+System.out.print("o nome do animal é" + nome + "o nome do tutor é" + nomeDoTutor + "A idade do animal é" + idade);
+  }
+}
+
+class Cachorro extends Animal{
+  String porte;
+
+void fichaAnimal(){
+System.out.println("o nome do cachorro é " + nome + " o nome do tutor é " + nomeDoTutor + " A idade do cachorro é " + idade + " o porte é " + porte);
+
+if("G".equals(porte)){
+int resultado = (120*25) /100;
+
+  resultado = 120 + resultado;
+
+  System.out.println( "o cachorro paga" + resultado);
+}
+}
+}
+
+class Gato extends Animal{
+  boolean castrado;
+
+void fichaAnimal(){
+
+  System.out.println("o nome do gato é " + nome + " o nome do tutor é " + nomeDoTutor + " A idade do gato é " + idade + " o castrado é " + castrado);
+
+
+  if(castrado == true){
+    int resultado = (120*25) /100;
+    resultado = 120 - resultado;
+    System.out.print("vai pagar" + resultado);
+
+
+  }
+}
+}
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Cachorro cachorro1 = new Cachorro();
+      cachorro1.nome = "bela";
+      cachorro1.nomeDoTutor = "Joao";
+      cachorro1.idade = 20;
+      cachorro1.porte = "M";
+      cachorro1.fichaAnimal();
+      
+      Gato gato1 = new Gato();
+      gato1.nome = "Miau";
+      gato1.castrado = true;
+
+      gato1.fichaAnimal();
+
+
+    }
+}
