@@ -1,0 +1,20 @@
+// Classe Mãe
+public class Animal {
+    String nome;
+
+    
+    public Animal(String nome) {
+        this.nome = nome;
+    }
+}
+
+// Classe Filha
+public class Cachorro extends Animal {
+    String raca;
+
+    // Construtor da Filha
+    public Cachorro(String nome, String raca) {
+        super(nome);      // 1. Envia o nome para o construtor da classe Mãe
+        this.raca = raca; // 2. Guarda a raça na própria Filha
+    }
+}
