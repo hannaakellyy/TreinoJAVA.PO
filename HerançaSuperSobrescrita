@@ -1,0 +1,14 @@
+
+public class Animal {
+    public void fazerSom() {
+        System.out.println("O animal faz um som padrao.");
+    }
+}
+
+
+public class Cachorro extends Animal {
+    public void fazerSom() {
+        super.fazerSom(); 
+        System.out.println("Au Au!"); 
+    }
+}
