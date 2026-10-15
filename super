@@ -1,0 +1,35 @@
+abstract class Pessoa{
+  String nome;
+  int idade;
+
+Pessoa(String nome, int idade){
+  this.nome = nome;
+  this.idade = idade;
+}
+}
+
+class Hanna extends Pessoa{
+int endereco;
+
+Hanna(String nome, int idade, int endereco){
+  super(nome,idade);
+  this.endereco = endereco;
+  }
+
+ public void imprimir(){
+
+  System.out.print("o nome dela é" + nome + "a idade dela é" + idade + "o endereco é" + endereco);
+
+  }
+}
+
+
+public class Main{
+  public static void main (String[] args){
+    System.out.print("testando");
+
+Hanna Hanna1 = new Hanna("Hanna", 18, 276);
+
+Hanna1.imprimir();
+  }
+}
