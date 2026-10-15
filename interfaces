@@ -1,0 +1,92 @@
+import java.util.*;
+
+class Carro implements Manutanivel, Comercializavel{
+  
+  public void trocaroleo(){
+    System.out.println("trocou");
+  }
+
+  public void partida(){
+    System.out.println("partiu");
+  }
+
+  public void anunciar(){
+    System.out.println("anuncuiou");
+  }
+  public void vender(){
+    System.out.println("vendeu");
+  }
+  public void dirigir(){
+    System.out.println("dirigiu");
+  }
+  public void frear(){
+    System.out.println("freou");
+  }
+}
+
+class Computador implements Comercializavel{
+  public void anunciar(){
+    System.out.println("anuciavel");
+  }
+  public void vender(){
+    System.out.println("vendeu");
+  }
+  public void testar(){
+    System.out.println("testou");
+  }
+
+}
+
+class Foguete implements Dirigivel{
+  public void acelerar(){
+    System.out.println("acelerando");
+  }
+  public void frear(){
+    System.out.println("freando");
+  }
+
+}
+
+interface Manutanivel{
+  public void trocaroleo();
+ public void partida();
+}
+
+interface Comercializavel{
+public void anunciar();
+public void vender();
+
+}
+
+interface Dirigivel{
+  public void acelerar();
+  public void frear();
+}
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Carro carro1 = new Carro();
+
+      carro1.partida();
+      carro1.trocaroleo();
+      carro1.anunciar();
+      carro1.vender();
+      carro1.dirigir();
+      carro1.frear();
+
+      Computador computador1 = new Computador();
+
+      computador1.anunciar();
+      computador1.vender();
+      computador1.testar();
+
+      Foguete foguete1 = new Foguete();
+
+      foguete1.frear();
+      foguete1.acelerar();
+
+
+    }
+}
