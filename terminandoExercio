@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Passagem{
+  String origem;
+  String destino;
+  int poltrona;
+  final int valorbase = 50;
+}
+class Convencional extends Passagem{
+
+  void imprimir(){
+System.out.print("custa" + valorbase);
+  }
+}
+class Executivo extends Passagem{
+
+  
+
+
+
+}
+class Leito extends Passagem{
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+    }
+}
