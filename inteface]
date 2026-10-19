@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Vendedor implements Vender{
+  public void passarCartao(){
+    System.out.println("voce deseja aproximar o cartao");
+  }
+  public void falarCliente(){
+    System.out.println("Ola seja bem vindo");
+  }
+}
+
+class Cliente implements Comprar{
+  public void perguntarValor(){
+    System.out.println("qual e o valor?");
+  }
+  public void perguntarSeTem(){
+    System.out.println("tem?");
+  }
+}
+
+interface Vender{
+  public void passarCartao();
+  public void falarCliente();
+
+}
+
+interface Comprar{
+  public void perguntarValor();
+  public void perguntarSeTem();
+}
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Vendedor vendedor1 = new Vendedor();
+      vendedor1.passarCartao();
+      vendedor1.falarCliente();
+
+      Cliente cliente1 = new Cliente();
+      cliente1.perguntarSeTem();
+      cliente1.perguntarValor();
+    }
+}
