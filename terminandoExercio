@@ -1,30 +1,40 @@
 import java.util.*;
 
-class Passagem{
+abstract class Passagem{
   String origem;
   String destino;
   int poltrona;
-  final int valorbase = 50;
+  static float valorbase = 50;
 }
 class Convencional extends Passagem{
 
   void imprimir(){
-System.out.print("custa" + valorbase);
+System.out.println("custa" + valorbase);
   }
 }
 class Executivo extends Passagem{
-
-  
-
-
+ static float calcularExecutivo(){
+ float valorfinal = (valorbase*35)/100 + valorbase;
+ return valorfinal;
+}
+   static void imprimir(){
+System.out.println("custa" + calcularExecutivo());
+   }
 
 }
-class Leito extends Passagem{
+  class Leito extends Passagem{
+    float novoValor = Executivo.calcularExecutivo()+ 80;
+    void imprimir(){
+      System.out.print("custa" + novoValor);
 
-}
+    }
+  }
 
 public class Main {
     public static void main(String[] args) {
       System.out.println("Hello, World!");
+      Convencional convencional1 = new Convencional();
+      convencional1.imprimir();
+      Executivo.imprimir();
     }
 }
