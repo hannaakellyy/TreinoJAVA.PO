@@ -10,6 +10,7 @@ class Convencional extends Passagem{
 
   void imprimir(){
 System.out.println("custa" + valorbase);
+System.out.print("Origem:" + origem + "destino:" + destino)
   }
 }
 class Executivo extends Passagem{
