@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Capitulo{
+  int numero;
+  String titulo;
+
+  Capitulo(int numero, String titulo){
+    this.numero = numero;
+    this.titulo = titulo;
+  }
+
+  void imprimir(){
+    System.out.print("o numero e" + numero + "o titulo e" + titulo);
+
+  }
+}
+
+class Livro{
+  String nome;
+  int valor;
+  Capitulo novoCapitulo;
+
+  Livro(String nome, int valor){
+    this.nome = nome;
+    this.valor = valor;
+    this.novoCapitulo = new Capitulo(1, "qualquer");
+  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+
+      Livro livro1 = new Livro("Dom Casmurro", 50);
+
+      livro1.novoCapitulo.imprimir();
+    }
+}
